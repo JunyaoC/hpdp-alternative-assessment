@@ -16,7 +16,6 @@ void walk_line(char rowString[], int tlArr[], int trArr[]){
     int leftBufferIndex = 0;
     int rightBufferIndex = 0;
 
-    // #pragma omp parallel for schedule(dynamic) 
     for(int i=0;i<lineWidth;i++){
         if ((rowString[i]) == '1'){
             if(left_edge_x == -1){
@@ -75,8 +74,7 @@ void read_file(int yStartNum,int yReadLineQty, int rank, int masterID){
     int rectH[lineWidth];
 
     int sendPayload[4];
-    
-    // #pragma omp parallel for schedule(dynamic) 
+
     for(int i=0;i<yReadLineQty;i++){
         int count = 0;
         fseek( fp, (yStartNum + i) * (lineWidth+1), SEEK_SET );
