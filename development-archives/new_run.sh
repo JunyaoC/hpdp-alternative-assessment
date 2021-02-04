@@ -1,0 +1,1 @@
+clear && g++ -fopenmp solution_3.c -o solution_3.o && ./solution_3.o
